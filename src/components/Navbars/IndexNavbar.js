@@ -69,22 +69,15 @@ export default function IndexNavbar() {
   const onCollapseExited = () => {
     setCollapseOut("");
   };
-  const scrollToDownload = () => {
-    document
-      .getElementById("download-section")
-      .scrollIntoView({ behavior: "smooth" });
-  };
+  
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
         <div className="navbar-translate">
-          <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>BLK• </span>
-            Design System React
+          <NavbarBrand to="/" tag={Link} id="navbar-brand" style={{ color: "#09E85E"}}>
+            <span style={{ color: "#E8E6E3"}}>Waizbart drone • </span>
+            Serviços aéreos
           </NavbarBrand>
-          <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Designed and Coded by Creative Tim
-          </UncontrolledTooltip>
           <button
             aria-expanded={collapseOpen}
             className="navbar-toggler navbar-toggler"
@@ -105,8 +98,8 @@ export default function IndexNavbar() {
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  BLK•React
+                <a style={{ color: "#09E85E"}} href="#pablo" onClick={(e) => e.preventDefault()}>
+                  Menu
                 </a>
               </Col>
               <Col className="collapse-close text-right" xs="6">
@@ -124,88 +117,50 @@ export default function IndexNavbar() {
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="https://twitter.com/CreativeTim"
+                href="/landing-page"
                 rel="noopener noreferrer"
                 target="_blank"
-                title="Follow us on Twitter"
+                title="Siga-nos no Instagram"
               >
-                <i className="fab fa-twitter" />
-                <p className="d-lg-none d-xl-none">Twitter</p>
+                <i className="tim-icons icon-paper d-lg-none d-xl-none" />
+                <b>Serviços</b>
               </NavLink>
             </NavItem>
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="https://www.facebook.com/CreativeTim"
+                href="/landing-page"
                 rel="noopener noreferrer"
                 target="_blank"
-                title="Like us on Facebook"
+                title="Siga-nos no Instagram"
               >
-                <i className="fab fa-facebook-square" />
-                <p className="d-lg-none d-xl-none">Facebook</p>
+                <i className="tim-icons icon-image-02 d-lg-none d-xl-none" />
+                <b>Portifólio</b>
               </NavLink>
             </NavItem>
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial"
+                href="/register-page"
                 rel="noopener noreferrer"
                 target="_blank"
-                title="Follow us on Instagram"
+                title="Siga-nos no Instagram"
               >
-                <i className="fab fa-instagram" />
+                <i className="tim-icons icon-chat-33 d-lg-none d-xl-none" />
+                <b>Contato</b>
+              </NavLink>
+            </NavItem>
+            <NavItem className="p-0">
+              <NavLink
+                data-placement="bottom"
+                href="https://www.instagram.com/waizbart.drone"
+                rel="noopener noreferrer"
+                target="_blank"
+                title="Siga-nos no Instagram"
+              >
+                <i className="fab fa-instagram d-lg-none d-xl-none" />
                 <p className="d-lg-none d-xl-none">Instagram</p>
               </NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav>
-              <DropdownToggle
-                caret
-                color="default"
-                data-toggle="dropdown"
-                href="#pablo"
-                nav
-                onClick={(e) => e.preventDefault()}
-              >
-                <i className="fa fa-cogs d-lg-none d-xl-none" />
-                Getting started
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-with-icons">
-                <DropdownItem href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/overview">
-                  <i className="tim-icons icon-paper" />
-                  Documentation
-                </DropdownItem>
-                <DropdownItem tag={Link} to="/register-page">
-                  <i className="tim-icons icon-bullet-list-67" />
-                  Register Page
-                </DropdownItem>
-                <DropdownItem tag={Link} to="/landing-page">
-                  <i className="tim-icons icon-image-02" />
-                  Landing Page
-                </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
-                  <i className="tim-icons icon-single-02" />
-                  Profile Page
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="primary"
-                target="_blank"
-                href="https://www.creative-tim.com/product/blk-design-system-pro-react?ref=bdsr-user-archive-index-navbar-upgrade-pro"
-              >
-                <i className="tim-icons icon-spaceship" /> Upgrade to PRO
-              </Button>
-            </NavItem>
-            <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="default"
-                onClick={scrollToDownload}
-              >
-                <i className="tim-icons icon-cloud-download-93" /> Download
-              </Button>
             </NavItem>
           </Nav>
         </Collapse>

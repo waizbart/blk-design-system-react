@@ -17,8 +17,28 @@
 */
 import React from "react";
 
+// react plugin used to create charts
+import { Line } from "react-chartjs-2";
 // reactstrap components
-import { Container } from "reactstrap";
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  ListGroupItem,
+  ListGroup,
+  Container,
+  Row,
+  Col
+} from "reactstrap";
+
+// core components
+import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import Footer from "components/Footer/Footer.js";
+
+import bigChartData from "variables/charts.js";
 
 export default function PageHeader() {
   return (
@@ -32,10 +52,9 @@ export default function PageHeader() {
       <div className="squares square7" />
       <Container>
         <div className="content-center brand">
-          <h1 className="h1-seo">BLK• React</h1>
+          <h1 className="h1-seo">Drone + <div style={{ color: "#09E85E"}}>IA</div></h1>
           <h3 className="d-none d-sm-block">
-            A beautiful Design System for Bootstrap 4 (reactstrap) and React.
-            It's Free and Open Source.
+            Os melhores serviços de drones utilizando tecnologia de ponta e <div style={{ color: "#09E85E", display: "inline"}}>Inteligência Artificial.</div>
           </h3>
         </div>
       </Container>

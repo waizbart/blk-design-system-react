@@ -31,32 +31,22 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" style={{ borderColor: "#09E85E"}}>
       <Container>
         <Row>
           <Col md="3">
-            <h1 className="title">BLK•</h1>
+            <h1 className="title">Waizbart Drones</h1>
           </Col>
           <Col md="3">
             <Nav>
               <NavItem>
                 <NavLink to="/" tag={Link}>
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/landing-page" tag={Link}>
-                  Landing
+                  Serviços
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink to="/register-page" tag={Link}>
-                  Register
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/profile-page" tag={Link}>
-                  Profile
+                  Portifólio
                 </NavLink>
               </NavItem>
             </Nav>
@@ -64,29 +54,14 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="https://creative-tim.com/contact-us?ref=blkdsr-footer">
-                  Contact Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://creative-tim.com/about-us?ref=blkdsr-footer">
-                  About Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://creative-tim.com/blog?ref=blkdsr-footer">
-                  Blog
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://opensource.org/licenses/MIT">
-                  License
+                <NavLink to="/landing-page" tag={Link}>
+                  Contato
                 </NavLink>
               </NavItem>
             </Nav>
           </Col>
           <Col md="3">
-            <h3 className="title">Follow us:</h3>
+            <h3 className="title">Siga-nos:</h3>
             <div className="btn-wrapper profile">
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
@@ -98,7 +73,7 @@ export default function Footer() {
                 <i className="fab fa-twitter" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip622135962">
-                Follow us
+                Siga-nos
               </UncontrolledTooltip>
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
