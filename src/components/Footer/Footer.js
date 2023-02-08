@@ -28,33 +28,34 @@ import {
   Col,
   UncontrolledTooltip
 } from "reactstrap";
+import { animateScroll as scroll } from "react-scroll";
 
 export default function Footer() {
   return (
-    <footer className="footer" style={{ borderColor: "#09E85E"}}>
+    <footer className="footer" style={{
+      borderColor: "#09E85E",
+      background: "#171941",
+    }}>
       <Container>
         <Row>
           <Col md="3">
             <h1 className="title">Waizbart Drones</h1>
           </Col>
-          <Col md="3">
+          <Col md="6">
             <Nav>
               <NavItem>
-                <NavLink to="/" tag={Link}>
+                <NavLink to="/" tag={Link} onClick={(e) => {
+                  e.preventDefault();
+                  scroll.scrollTo(1100)
+                }}>
                   Serviços
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/register-page" tag={Link}>
-                  Portifólio
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Col>
-          <Col md="3">
-            <Nav>
-              <NavItem>
-                <NavLink to="/landing-page" tag={Link}>
+                <NavLink to="/register-page" tag={Link} onClick={(e) => {
+                  e.preventDefault();
+                  scroll.scrollTo(3320)
+                }}>
                   Contato
                 </NavLink>
               </NavItem>
@@ -85,7 +86,7 @@ export default function Footer() {
                 <i className="fab fa-facebook-square" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip230450801">
-                Like us
+                Curta
               </UncontrolledTooltip>
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
@@ -97,7 +98,7 @@ export default function Footer() {
                 <i className="fab fa-dribbble" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip318450378">
-                Follow us
+                Siga-nos
               </UncontrolledTooltip>
             </div>
           </Col>

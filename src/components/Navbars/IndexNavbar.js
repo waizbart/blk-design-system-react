@@ -19,12 +19,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
-  Button,
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -33,8 +28,8 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
 } from "reactstrap";
+import { animateScroll as scroll } from "react-scroll";
 
 export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -69,13 +64,16 @@ export default function IndexNavbar() {
   const onCollapseExited = () => {
     setCollapseOut("");
   };
-  
+
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
         <div className="navbar-translate">
-          <NavbarBrand to="/" tag={Link} id="navbar-brand" style={{ color: "#09E85E"}}>
-            <span style={{ color: "#E8E6E3"}}>Waizbart drone • </span>
+          <NavbarBrand to="/" tag={Link} id="navbar-brand" style={{ color: "#09E85E" }} onClick={(e) => {
+            e.preventDefault();
+            scroll.scrollToTop()
+          }}>
+            <span style={{ color: "#E8E6E3" }}>Waizbart drone • </span>
             Serviços aéreos
           </NavbarBrand>
           <button
@@ -98,7 +96,7 @@ export default function IndexNavbar() {
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
-                <a style={{ color: "#09E85E"}} href="#pablo" onClick={(e) => e.preventDefault()}>
+                <a style={{ color: "#09E85E" }} href="#pablo" onClick={(e) => e.preventDefault()}>
                   Menu
                 </a>
               </Col>
@@ -117,10 +115,13 @@ export default function IndexNavbar() {
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="/landing-page"
+                href="/"
                 rel="noopener noreferrer"
-                target="_blank"
-                title="Siga-nos no Instagram"
+                title="Veja nossos serviços"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scroll.scrollTo(1100)
+                }}
               >
                 <i className="tim-icons icon-paper d-lg-none d-xl-none" />
                 <b>Serviços</b>
@@ -129,22 +130,13 @@ export default function IndexNavbar() {
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="/landing-page"
+                href="/"
                 rel="noopener noreferrer"
-                target="_blank"
-                title="Siga-nos no Instagram"
-              >
-                <i className="tim-icons icon-image-02 d-lg-none d-xl-none" />
-                <b>Portifólio</b>
-              </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
-              <NavLink
-                data-placement="bottom"
-                href="/register-page"
-                rel="noopener noreferrer"
-                target="_blank"
-                title="Siga-nos no Instagram"
+                title="Entre em contato conosco"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scroll.scrollTo(3320)
+                }}
               >
                 <i className="tim-icons icon-chat-33 d-lg-none d-xl-none" />
                 <b>Contato</b>

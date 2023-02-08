@@ -16,7 +16,6 @@
 
 */
 import React from "react";
-import classnames from "classnames";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 // reactstrap components
@@ -29,13 +28,6 @@ import {
   FormGroup,
   Form,
   Input,
-  FormText,
-  NavItem,
-  NavLink,
-  Nav,
-  Table,
-  TabContent,
-  TabPane,
   Container,
   Row,
   Col,
@@ -43,9 +35,8 @@ import {
   UncontrolledCarousel
 } from "reactstrap";
 
-// core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import Footer from "components/Footer/Footer.js";
+import './styles.css';
+
 
 const carouselItems = [
   {
@@ -106,13 +97,10 @@ export default function ProfilePage() {
             <h1 className="text-center" style={{ marginBottom: 100, fontWeight: "bold" }}>O que fazemos?</h1>
             <Row>
               <Col lg="6" md="6">
-                <h1 className="profile-title text-left">Inspeção aérea</h1>
+                <h1 className="profile-title text-left">Inspeções</h1>
                 <h5 className="text-on-back">01</h5>
                 <p className="profile-description">
-                  Offices parties lasting outward nothing age few resolve.
-                  Impression to discretion understood to we interested he
-                  excellence. Him remarkably use projection collecting. Going
-                  about eat forty world has round miles.
+                O drone é uma ferramenta poderosa para inspeção, capturando uma visão aérea de alta resolução com segurança e facilidade. Sendo possível gerar relatórios detalhados de perda térmica, rachaduras, possíveis infiltrações, mau isolamento térmico e muito mais.
                 </p>
               </Col>
               <Col md="6">
@@ -132,33 +120,47 @@ export default function ProfilePage() {
                 </Row>
               </Col>
               <Col md="5">
-                <h1 className="profile-title text-left">Projects</h1>
+                <h1 className="profile-title text-left">Investigação particular</h1>
                 <h5 className="text-on-back">02</h5>
                 <p className="profile-description text-left">
-                  An artist of considerable range, Ryan — the name taken by
-                  Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-                  performs and records all of his own music, giving it a warm,
-                  intimate feel with a solid groove structure. An artist of
-                  considerable range.
+                  Usando tecnologias de Inteligência Artificial e Visão Computacional, o drone é capaz de reconhecer e identificar pessoas, veículos e objetos. Com isso, é possível realizar investigações particulares e vigilâncias de forma rápida e segura. 
                 </p>
-                <div className="btn-wrapper pt-3">
-                  <Button
-                    className="btn-simple"
-                    color="primary"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="tim-icons icon-book-bookmark" /> Bookmark
-                  </Button>
-                  <Button
-                    className="btn-simple"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <i className="tim-icons icon-bulb-63" /> Check it!
-                  </Button>
-                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div className="section">
+          <Container>
+            <Row className="justify-content-between">
+            <Col md="5">
+                <h1 className="profile-title text-left">Acompanhamento de obras</h1>
+                <h5 className="text-on-back">03</h5>
+                <p className="profile-description text-left">
+                  O drone é uma ferramenta poderosa para inspeção, capturando uma visão aérea de alta resolução com segurança e facilidade, economizando tempo e dinheiro.
+                </p>
+              </Col>
+              <Col md="6">
+                <Row className="justify-content-between align-items-center">
+                  <UncontrolledCarousel items={carouselItems} />
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        <div className="section">
+          <Container>
+            <Row className="justify-content-between">
+              <Col md="6">
+                <Row className="justify-content-between align-items-center">
+                  <UncontrolledCarousel items={carouselItems} />
+                </Row>
+              </Col>
+              <Col md="5">
+                <h1 className="profile-title text-left">Mapeamento 3D</h1>
+                <h5 className="text-on-back">04</h5>
+                <p className="profile-description text-left">
+                  Utilizando tecnologia de ponta e softwares de mapeamento 3D, o drone é capaz de gerar mapas de alta resolução, com precisão de centímetros, em tempo real. Com isso, é possível mapear estruturas no mundo real, como edifícios, casas, terrenos, etc.
+                </p>
               </Col>
             </Row>
           </Container>
@@ -169,62 +171,65 @@ export default function ProfilePage() {
               <Col md="6">
                 <Card className="card-plain">
                   <CardHeader>
-                    <h1 className="profile-title text-left">Contact</h1>
-                    <h5 className="text-on-back">03</h5>
+                    <h1 className="profile-title text-left">Contato</h1>
+                    
+                    <h5 className="text-on-back"><i className="tim-icons icon-send" /></h5>
                   </CardHeader>
                   <CardBody>
                     <Form>
                       <Row>
                         <Col md="6">
                           <FormGroup>
-                            <label>Your Name</label>
-                            <Input defaultValue="Mike" type="text" />
+                            <label>Seu nome</label>
+                            <Input placeholder="Nome" type="text" />
                           </FormGroup>
                         </Col>
                         <Col md="6">
                           <FormGroup>
-                            <label>Email address</label>
-                            <Input placeholder="mike@email.com" type="email" />
+                            <label>Endereço de email</label>
+                            <Input placeholder="email@email.com" type="email" />
                           </FormGroup>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6">
                           <FormGroup>
-                            <label>Phone</label>
-                            <Input defaultValue="001-12321345" type="text" />
+                            <label>Telefone</label>
+                            <Input placeholder="(11) 99999-9999" type="text" />
                           </FormGroup>
                         </Col>
                         <Col md="6">
                           <FormGroup>
-                            <label>Company</label>
-                            <Input defaultValue="CreativeTim" type="text" />
+                            <label>Empresa</label>
+                            <Input placeholder="Nome da empresa" type="text" />
                           </FormGroup>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="12">
                           <FormGroup>
-                            <label>Message</label>
-                            <Input placeholder="Hello there!" type="text" />
+                            <label>Mensagem</label>
+                            <Input defaultValue="Olá! Preciso de serviços de drone com IA." type="text" />
                           </FormGroup>
                         </Col>
                       </Row>
                       <Button
                         className="btn-round float-right"
-                        color="primary"
                         data-placement="right"
                         id="tooltip341148792"
                         type="button"
+                        style={{
+                          color: "#09E85E",
+                        }}
                       >
-                        Send text
+                        Enviar
                       </Button>
                       <UncontrolledTooltip
                         delay={0}
                         placement="right"
                         target="tooltip341148792"
                       >
-                        Can't wait for your message
+                        Estamos ansiosos pelo seu contato
                       </UncontrolledTooltip>
                     </Form>
                   </CardBody>
@@ -233,27 +238,27 @@ export default function ProfilePage() {
               <Col className="ml-auto" md="4">
                 <div className="info info-horizontal">
                   <div className="icon icon-primary">
-                    <i className="tim-icons icon-square-pin" />
+                    <i className="tim-icons icon-square-pin verde" />
                   </div>
                   <div className="description">
-                    <h4 className="info-title">Find us at the office</h4>
+                    <h4 className="info-title">Encontre-nos no escritório</h4>
                     <p>
-                      Bld Mihail Kogalniceanu, nr. 8, <br />
-                      7652 Bucharest, <br />
-                      Romania
+                      Rua Cananeia, 100, <br />
+                      Jardim Leocádia, <br />
+                      Sorocaba - SP
                     </p>
                   </div>
                 </div>
                 <div className="info info-horizontal">
                   <div className="icon icon-primary">
-                    <i className="tim-icons icon-mobile" />
+                    <i className="tim-icons icon-mobile verde" />
                   </div>
                   <div className="description">
-                    <h4 className="info-title">Give us a ring</h4>
+                    <h4 className="info-title">Ligações ou WhatsApp</h4>
                     <p>
-                      Michael Jordan <br />
-                      +40 762 321 762 <br />
-                      Mon - Fri, 8:00-22:00
+                      Guilherme Waizbart <br />
+                      +55 14 99758-5384 <br />
+                      Seg - Sex, 8:00-22:00
                     </p>
                   </div>
                 </div>
